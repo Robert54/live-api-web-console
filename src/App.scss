@@ -146,6 +146,17 @@ body {
     gap: 1rem;
     max-width: 100%;
     overflow: hidden;
+    transition: margin-right 0.2s ease-in;
+    // Remove the padding: 0 2rem; line
+  }
+
+  // Add this new rule to adjust main content when side panel is open
+  .side-panel.open ~ main {
+    margin-right: 20px;
+    
+    .main-app-area {
+      padding: 0 2rem; // Reduce padding when side panel is open
+    }
   }
 
   .main-app-area {
@@ -153,6 +164,15 @@ body {
     flex: 1;
     align-items: center;
     justify-content: center;
+    max-width: 100%;
+    width: 100%;
+    gap: 4rem; // Default gap
+    padding: 1rem 2rem;
+    
+    // Reduce gap when room inspection is active
+    &.room-inspection-active {
+      gap: 2rem; // Smaller gap when room inspection panel is shown
+    }
   }
 
   .function-call {
@@ -167,7 +187,7 @@ body {
 /* video player */
 .stream {
   flex-grow: 1;
-  max-width: 90%;
+  max-width: 45%; // Reduce to allow room for both panels
   border-radius: 32px;
   max-height: fit-content;
 }

@@ -33,11 +33,9 @@ const apiOptions: LiveClientOptions = {
 };
 
 function App() {
-  // this video reference is used for displaying the active stream, whether that is the webcam or screen capture
-  // feel free to style as you see fit
   const videoRef = useRef<HTMLVideoElement>(null);
-  // either the screen capture, the video or null, if null we hide it
   const [videoStream, setVideoStream] = useState<MediaStream | null>(null);
+  const [hasRoomInspection, setHasRoomInspection] = useState(false);
 
   return (
     <div className="App">
@@ -45,9 +43,10 @@ function App() {
         <div className="streaming-console">
           <SidePanel />
           <main>
-            <div className="main-app-area">
-              {/* APP goes here */}
-              <Altair />
+            <div className={cn("main-app-area", {
+              "room-inspection-active": hasRoomInspection
+            })}>
+              <Altair onRoomInspectionChange={setHasRoomInspection} />
               <video
                 className={cn("stream", {
                   hidden: !videoRef.current || !videoStream,

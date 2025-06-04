@@ -180,13 +180,13 @@ function ControlTray({
 
         {supportsVideo && (
           <>
-            <MediaStreamButton
+            {/* <MediaStreamButton
               isStreaming={screenCapture.isStreaming}
               start={changeStreams(screenCapture)}
               stop={changeStreams()}
               onIcon="cancel_presentation"
               offIcon="present_to_all"
-            />
+            /> */}
             <MediaStreamButton
               isStreaming={webcam.isStreaming}
               start={changeStreams(webcam)}
@@ -213,7 +213,7 @@ function ControlTray({
         </div>
         <span className="text-indicator">Streaming</span>
       </div>
-      {enableEditingSettings ? <SettingsDialog /> : ""}
+      {/* {enableEditingSettings ? <SettingsDialog /> : ""} */}
     </section>
   );
 }
