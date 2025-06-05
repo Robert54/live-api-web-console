@@ -2,9 +2,21 @@
 
 This repository contains a react-based starter app for using the [Live API](<[https://ai.google.dev/gemini-api](https://ai.google.dev/api/multimodal-live)>) over a websocket. It provides modules for streaming audio playback, recording user media such as from a microphone, webcam or screen capture as well as a unified log view to aid in development of your application.
 
-[![Live API Demo](readme/thumbnail.png)](https://www.youtube.com/watch?v=J_q7JY1XxFE)
+[![Live API Demo](readme/thumbnail-am-i-done.png)](https://www.youtube.com/watch?v=J_q7JY1XxFE)
 
 Watch the demo of the Live API [here](https://www.youtube.com/watch?v=J_q7JY1XxFE).
+
+## Room Inspection Tool
+
+This console includes an "Am I Done?" room inspection feature that uses Gemini's multimodal capabilities to analyze your room and provide a tidiness score. The tool:
+
+- Captures live video feed from your webcam
+- Analyzes the room for clutter and organization
+- Provides a numerical score (e.g., 7.5/10) with descriptive feedback
+- Displays results in a clean, user-friendly panel alongside the video feed
+- Features optimized layout with proper spacing between the inspection panel and video display
+
+The room inspection panel appears on the left side of the interface when activated, with the video feed positioned on the right side. The layout has been optimized for balanced spacing and visual clarity.
 
 ## Usage
 
